@@ -22,6 +22,13 @@ sum(is.na(total))
 
 
 
+#二選一 (1)這個 三個月任一筆資料都融合近來
+```{r}
+total <- rbind(seven,eight,nine)
+```
+
+#(2)下面的code如果你想要不重複的帳戶，在執行
+
 把三個月內，重複出現在各個月的編號merge起來成一筆
 只使用出現在最晚時間的資料當作此人的資料，去除較早的資料
 ```{r}
@@ -29,8 +36,6 @@ if (!require("dplyr")) install.packages("dplyr")
 total <- semi_join(x = eight, y = seven, by = "編號")
 total <- semi_join(x = nine, y = total, by = "編號")
 ```
-
-#如果要在EDA前就先根據結果標記做區分 在執行這個
 ```{r}
 #只跑其中一行！
 total <- total[total$結果標記=="不動作",]
@@ -38,10 +43,10 @@ total <- total[total$結果標記=="不動作",]
 total <- total[total$結果標記=="流失",]
 #只跑其中一行！
 total <- total[total$結果標記=="續用",]
-
 ```
 
 
+ 
 
 看性別的分配
 ```{r}
