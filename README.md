@@ -1,1 +1,9 @@
-# Asia-Pacific-Telecom-Churn-Rate-Prediction
+# Asia-Pacific-Telecom-Churn-Rate-Prediction\
+亞太電信 顧客續用與流失率預測
+
+顧客購買A公司商品的交易模式為每個月支付A公司商品使用費,同時綁定一個持續使用A公司商品的約定期間(簡稱:綁約期),當顧客的綁約期快到時,A公司想要預測哪些顧客會繼續綁下一個約付商品使用費(簡稱:續用率)? 哪些顧客會離開(簡稱:流失率)? 
+
+使用R語言來建模
+
+2019/11/22
+EDA
