@@ -146,6 +146,7 @@ for(i in 1:nrow(product)){
     total_value <- product$Freq[i]
   }
 }
+result <- rbind(result, data.frame(x = substr(product$Var1[i-1],1,2), y = total_value))
 result
 
 ```
