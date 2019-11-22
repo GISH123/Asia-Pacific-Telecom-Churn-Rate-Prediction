@@ -16,8 +16,12 @@ nine <- read_excel("已標記顧客表 _201909.xlsx")
 看有沒有遺失值
 
 ```{r}
-sum(is.na(total))
+sum(is.na(seven))
+sum(is.na(eight))
+sum(is.na(nine))
 ```
+
+
 # 有25717筆資料有遺失值
 
 
@@ -27,14 +31,23 @@ sum(is.na(total))
 total <- rbind(seven,eight,nine)
 ```
 
+
+
+
 #(2)下面的code如果你想要不重複的帳戶，在執行
 
 把三個月內，重複出現在各個月的編號merge起來成一筆
 只使用出現在最晚時間的資料當作此人的資料，去除較早的資料
 ```{r}
 if (!require("dplyr")) install.packages("dplyr")
+
 total <- semi_join(x = eight, y = seven, by = "編號")
+total <- rbind(total,anti_join(seven,eight,by="編號"))
+
+total_temp <- total
 total <- semi_join(x = nine, y = total, by = "編號")
+total <- rbind(total,anti_join(total_temp,nine,by="編號"))
+#total[total$統計年月!=201909,]
 ```
 ```{r}
 #只跑其中一行！
