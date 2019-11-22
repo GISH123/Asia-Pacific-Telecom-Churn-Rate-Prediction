@@ -11,8 +11,6 @@ seven <- read_excel("已標記顧客表 _201907.xlsx")
 eight <- read_excel("已標記顧客表 _201908.xlsx")
 nine <- read_excel("已標記顧客表 _201909.xlsx")
 
-total <- rbind(seven,eight,nine)
-
 ```
 
 看有沒有遺失值
@@ -21,6 +19,28 @@ total <- rbind(seven,eight,nine)
 sum(is.na(total))
 ```
 # 有25717筆資料有遺失值
+
+
+
+把三個月內，重複出現在各個月的編號merge起來成一筆
+只使用出現在最晚時間的資料當作此人的資料，去除較早的資料
+```{r}
+if (!require("dplyr")) install.packages("dplyr")
+total <- semi_join(x = eight, y = seven, by = "編號")
+total <- semi_join(x = nine, y = total, by = "編號")
+```
+
+#如果要在EDA前就先根據結果標記做區分 在執行這個
+```{r}
+#只跑其中一行！
+total <- total[total$結果標記=="不動作",]
+#只跑其中一行！
+total <- total[total$結果標記=="流失",]
+#只跑其中一行！
+total <- total[total$結果標記=="續用",]
+
+```
+
 
 
 看性別的分配
@@ -217,3 +237,10 @@ value_counts <- table(total$結果標記)
 value_counts
 ```
 # 結果有至少80%以上是不動作，到底流失率要不要算不動作 = =? 真的無言
+
+
+
+儲存成一個檔
+```{r}
+write.csv(total,'total.csv', row.names = FALSE)
+```
