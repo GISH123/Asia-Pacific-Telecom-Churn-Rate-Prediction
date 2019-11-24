@@ -39,14 +39,18 @@ total <- rbind(seven,eight,nine)
 把三個月內，重複出現在各個月的編號merge起來成一筆
 只使用出現在最晚時間的資料當作此人的資料，去除較早的資料
 ```{r}
-if (!require("dplyr")) install.packages("dplyr")
-
-total <- semi_join(x = eight, y = seven, by = "編號")
-total <- rbind(total,anti_join(seven,eight,by="編號"))
-
-total_temp <- total
-total <- semi_join(x = nine, y = total, by = "編號")
-total <- rbind(total,anti_join(total_temp,nine,by="編號"))
+eight[eight$編號 %in% nine$編號 == F, ]
+temp <- rbind(eight[eight$編號 %in% nine$編號 == F, ], nine) # 8,9月·不重複
+temp_2 <- rbind(seven[seven$編號 %in% temp$編號 == F,], temp) # 7,8,9月·不重複
+total <- temp_2
+# if (!require("dplyr")) install.packages("dplyr")
+# 
+# total <- semi_join(x = eight, y = seven, by = "編號")
+# total <- rbind(total,anti_join(seven,eight,by="編號"))
+# 
+# total_temp <- total
+# total <- semi_join(x = nine, y = total, by = "編號")
+# total <- rbind(total,anti_join(total_temp,nine,by="編號"))
 #total[total$統計年月!=201909,]
 ```
 ```{r}
