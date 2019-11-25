@@ -22,7 +22,7 @@
 Accuracy:  0.9014147 
 
 
-| Confusion Matrix | Predictions    |   (Validation Data)  | 
+| Confusion Matrix | Predictions    |   (Test Data)  | 
 | ------------ | -------------- | ------------- | 
 | Labels       |       0        |       1       | 
 |      0       | 133420          | 6016          | 
