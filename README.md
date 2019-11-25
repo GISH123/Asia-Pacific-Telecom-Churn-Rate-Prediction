@@ -13,10 +13,10 @@
 第三個月的資料當作test
 
 |              | Predictions    |               |
-| Labels       | 0 | 1 |
+| Labels       | 0              |             1 |
 | ---          |     ---        |           --- |
-| 0   | 36559          | 3306    |
-| 1    | 910       | 1990      |
+| 0            | 36559          | 3306          |
+| 1            | 910            | 1990          |
 
 
 Confusion matrix(Validation data):   
