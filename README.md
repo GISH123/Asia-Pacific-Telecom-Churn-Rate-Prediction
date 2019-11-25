@@ -18,7 +18,7 @@
 | Content Cell  | Content Cell  |
 
 
-|              | Predictions    |               | 
+|      a       | Predictions    |       b       | 
 | Labels       |       0        |       1       | 
 | ------------ | -------------- | ------------- | 
 |      0       | 36559          | 3306          | 
