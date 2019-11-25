@@ -12,6 +12,13 @@
 前兩個月的資料以0.75, 0.25切出train/validation
 第三個月的資料當作test
 
+|              | Predictions    |               |
+| Labels       | 0 | 1 |
+| ---          |     ---        |           --- |
+| 0   | 36559          | 3306    |
+| 1    | 910       | 1990      |
+
+
 Confusion matrix(Validation data):   
 &nbsp;&nbsp; prediction     
 labels &nbsp;0&nbsp;1   
