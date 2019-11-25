@@ -19,10 +19,10 @@
 
 
 |              | Predictions    |               | 
-| Labels       | 0              |             1 | 
-| --- | --- | --- | 
-| 0            | 36559          | 3306          | 
-| 1            | 910            | 1990          | 
+| Labels       |       0        |       1       | 
+| ------------ | -------------- | ------------- | 
+|      0       | 36559          | 3306          | 
+|      1       | 910            | 1990          | 
 
 Confusion matrix(Validation data):   
 &nbsp;&nbsp; prediction     
