@@ -13,18 +13,18 @@
 第三個月的資料當作test
 
 Confusion matrix(Validation data):   
-           prediction     
-labels     0     1   
-     0 36559  3306   
-     1   910  1990  
+&nbsp;&nbsp; prediction     
+labels &nbsp;0&nbsp;1   
+&nbsp;0 36559  3306   
+&nbsp;1   910  1990  
 Accuracy:  0.9014147   
 
 
 Confusion matrix(Test data):   
-           prediction    
-labels      0      1   
-     0 133420   6016   
-     1   2669   4544   
+&nbsp;&nbsp;prediction    
+labels &nbsp;0 &nbsp;1   
+&nbsp;0 133420   6016   
+&nbsp;1   2669   4544   
      
 Accuracy:  0.940777    
 
