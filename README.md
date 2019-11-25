@@ -5,5 +5,29 @@
 
 使用R語言來建模
 
-2019/11/22
-EDA
+2019/11/22  EDA   
+
+2019/11/25  Catboost建模  
+使用前兩個月（不重複客戶）最近的資料，也就是說，如果該客戶出現在兩個月的資料，只取他最近一個月的資料代表該人
+前兩個月的資料以0.75, 0.25切出train/validation
+第三個月的資料當作test
+
+Confusion matrix(Validation data):
+           prediction
+labels     0     1
+     0 36559  3306
+     1   910  1990
+Accuracy:  0.9014147 
+
+
+Confusion matrix(Test data):
+           prediction
+labels      0      1
+     0 133420   6016
+     1   2669   4544
+     
+Accuracy:  0.940777 
+
+這邊有個現象，Test dataset的準確度比validation set還高
+我個人猜測是因為test資料量比較大，且此模型（比較generic?)所以導致accuracy比較高
+或是哪個地方出錯才導致這種現象
