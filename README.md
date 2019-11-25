@@ -12,33 +12,25 @@
 前兩個月的資料以0.75, 0.25切出train/validation
 第三個月的資料當作test
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
 
-
-| Confusion Matrix | Predictions    |               | 
+| Confusion Matrix | Predictions    |   (Validation Data)  | 
 | ------------ | -------------- | ------------- | 
 | Labels       |       0        |       1       | 
 |      0       | 36559          | 3306          | 
 |      1       | 910            | 1990          | 
 
-Confusion matrix(Validation data):   
-&nbsp;&nbsp; prediction     
-labels &nbsp;0&nbsp;1   
-&nbsp;0 36559  3306   
-&nbsp;1   910  1990  
-Accuracy:  0.9014147   
+Accuracy:  0.9014147 
 
 
-Confusion matrix(Test data):   
-&nbsp;&nbsp;prediction    
-labels &nbsp;0 &nbsp;1   
-&nbsp;0 133420   6016   
-&nbsp;1   2669   4544   
-     
+| Confusion Matrix | Predictions    |   (Validation Data)  | 
+| ------------ | -------------- | ------------- | 
+| Labels       |       0        |       1       | 
+|      0       | 133420          | 6016          | 
+|      1       | 2669            | 4544          | 
+
+
 Accuracy:  0.940777    
+
 
 這邊有個現象，Test dataset的準確度比validation set還高    
 我個人猜測是因為test資料量比較大，且此模型（比較generic?)所以導致accuracy比較高   
